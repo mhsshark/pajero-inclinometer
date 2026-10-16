@@ -1,2 +1,3 @@
 .pio/
 tools/sim/out/
+firmware/*.bin

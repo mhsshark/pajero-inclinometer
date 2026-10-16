@@ -1,6 +1,7 @@
 # Prebuilt firmware
 
-These are ready-to-flash images for the **Waveshare ESP32-S3-Touch-LCD-2.8C** (ESP32-S3, 16 MB flash, 8 MB octal PSRAM).
+Download the images from the repository's **Releases** page (for example `v1`). They are attached to each release
+rather than stored in the source tree. They are ready-to-flash images for the **Waveshare ESP32-S3-Touch-LCD-2.8C** (ESP32-S3, 16 MB flash, 8 MB octal PSRAM).
 Use **one** of the two files. You don't need both.
 
 | File | Flash address | What it contains | Use it when |
