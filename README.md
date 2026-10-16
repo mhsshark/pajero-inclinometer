@@ -3,6 +3,18 @@
 Firmware for the **Waveshare ESP32-S3-Touch-LCD-2.8C** (480×480 round ST7701 RGB panel, QMI8658 IMU) that mimics the
 Mitsubishi Pajero Gen 1 dash inclinometer (blue/orange face, see `images.jpeg`).
 
+![Inclinometer face at four poses](docs/overview.png)
+
+## Reading it
+
+| Level | 15° right | 20° nose up | 15° nose down, 10° left |
+|:---:|:---:|:---:|:---:|
+| <img src="docs/level.png" width="200"> | <img src="docs/right15.png" width="200"> | <img src="docs/noseup20.png" width="200"> | <img src="docs/nosedown15_left10.png" width="200"> |
+| Horizon flat, needle on the centre | Left end of the horizon at **15** on the lower scale | Needle at black **20** | Horizon's left end at upper **10**, needle at orange **15** |
+| | Original: `0120.jpg` | Original: `0121.jpg` | Original: `0122.jpg` |
+
+These images come from the host simulator (`tools/sim/run.sh`), which runs the same renderer as the firmware.
+
 - **Roll (side tilt):** the whole face rotates about the centre. That's the blue/grey halves, the orange horizon
   line and the vertical pitch scale. Read where the horizon meets the outer ring. Each end of the horizon points at
   its own scale. The upper (black) half has 10/20/30/40 and the lower (grey) half has 5/15/25/35/45. For example,
