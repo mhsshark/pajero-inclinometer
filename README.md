@@ -29,15 +29,15 @@ The serial monitor prints the mapped accelerometer reading, the angles and the f
 
 ## Flashing a prebuilt .bin (no PlatformIO)
 
-After `pio run`, copy the images into `dist/`:
+Ready-made images are in [`firmware/`](firmware/README.md). To refresh them after `pio run`, copy `.pio/build/inclinometer/firmware.factory.bin` and `firmware.bin` over them:
 
 | File | Flash at | Use |
 |---|---|---|
-| `dist/inclinometer-full-0x0.bin` | `0x0` | Complete image (bootloader + partition table + app) for a blank or foreign board. It also **erases the saved level**, so send `z` or long-press afterwards. |
-| `dist/inclinometer-app-0x10000.bin` | `0x10000` | App only, for updating a board that already runs this firmware. It keeps the saved level. |
+| `firmware/inclinometer-full-0x0.bin` | `0x0` | Complete image (bootloader + partition table + app) for a blank or foreign board. It also **erases the saved level**, so send `z` or long-press afterwards. |
+| `firmware/inclinometer-app-0x10000.bin` | `0x10000` | App only, for updating a board that already runs this firmware. It keeps the saved level. |
 
 ```bash
-esptool.py --chip esp32s3 write_flash 0x0 dist/inclinometer-full-0x0.bin
+esptool.py --chip esp32s3 write_flash 0x0 firmware/inclinometer-full-0x0.bin
 ```
 
 Browser flashers such as the Espressif web flasher take the full image at offset `0x0`. If the port doesn't show
